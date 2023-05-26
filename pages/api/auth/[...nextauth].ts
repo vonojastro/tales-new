@@ -5,7 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import GitHubProvider from "next-auth/providers/github";
 
-// import { compare } from 'bcrypt';
+import {compare} from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from "next";
 import sequelize from "../../../utils/dbMysql";
 import jwt from 'jsonwebtoken';
@@ -35,10 +35,13 @@ const options: NextAuthOptions = {
           throw new Error(`No user found for email: ${email}`);
           return null;
         }
-        // const isPasswordValid = await argon2.verify(user.password, password);
-        // if (!isPasswordValid) {
-        //   throw new Error('Invalid password');
-        // }
+        
+        
+        const isPasswordValid = await compare(password, user.password);
+        if (!isPasswordValid) {
+          throw new Error('Invalid password');
+        }
+        console.log(isPasswordValid)
 
         return user;
       }

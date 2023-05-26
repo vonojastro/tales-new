@@ -121,8 +121,8 @@ const PostComponent = ({ user, post, commentSubmit, heartPost }: Props) => {
                           src={`${item.profImg ? item.profImg : "https://links.papareact.com/gll"}`} alt="" />
                         <div className='flex flex-col md:flex-row md:gap-3'>
 
-                          <p className='text-[0.9rem] text-black '>
-                            {post.username.replace(/\b\w/g, (c: any) => c.toUpperCase())}
+                          <p className='text-[0.9rem] text-black capitalize'>
+                            {item?.user}
                           </p>
                           <Timeago date={item.createdAt} className='text-gray-400 text-[0.9rem]' />
                         </div>

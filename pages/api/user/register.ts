@@ -32,7 +32,7 @@ export default async function register(req: NextApiRequest, res: NextApiResponse
             // Check if user already exists in the database
             // Sequelize DB
             // const existingUser = await User.findOne({ where: { email } });
-            console.log(email)
+            // console.log(email)
             // Mongo DB
             const existingUser = await User.findOne({ email });
 

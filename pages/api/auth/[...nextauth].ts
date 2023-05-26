@@ -5,7 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import GitHubProvider from "next-auth/providers/github";
 
-import {compare} from 'bcrypt';
+// import {compare} from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from "next";
 import sequelize from "../../../utils/dbMysql";
 import jwt from 'jsonwebtoken';
@@ -37,11 +37,11 @@ const options: NextAuthOptions = {
         }
         
         
-        const isPasswordValid = await compare(password, user.password);
-        if (!isPasswordValid) {
-          throw new Error('Invalid password');
-        }
-        console.log(isPasswordValid)
+        // const isPasswordValid = await compare(password, user.password);
+        // if (!isPasswordValid) {
+        //   throw new Error('Invalid password');
+        // }
+        // console.log(isPasswordValid)
 
         return user;
       }

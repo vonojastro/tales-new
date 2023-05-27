@@ -85,7 +85,7 @@ const PostComponent = ({ user, post, commentSubmit, heartPost }: Props) => {
           {post.likes.length > 0 && (
             <span className='text-gray-400 px-3 py-2 text-[0.9rem]' >
               {post.likes.length === 1 ? post.likes.map((item: LikesData) => (
-                <span key={item._id}>
+                <span className='capitalize' key={item._id}>
                   {item.user}
                 </span>
               )) : (

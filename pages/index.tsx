@@ -144,7 +144,7 @@ const login = () => {
       redirect: false,
     })
 
-    console.log(res)
+    // console.log(res)
 
     if (res?.ok) {
       setLoginLoading(false)

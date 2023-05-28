@@ -19,7 +19,7 @@ interface Props {
 
 const Header = ({ user }: Props) => {
   const session: any = useSession();
-  console.log('session',session)
+  // console.log('session',session)
 
   const { showDropdown, setShowDropdown } = useDropdownStore();
   const handleClick = () => {
